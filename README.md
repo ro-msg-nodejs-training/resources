@@ -111,28 +111,52 @@ Online Shop:
  > - Updating a product by id
  > - Deleting a product by id
  >
- > These routes should use the in memory repositories for now.  
+ > These routes should use the in memory repositories for now. 
+ >
+ > Test these APIs using Postman.
  
 Further Resources:
 
  - [MDN: Node.js / Express Intro](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs)
 
-### 3. The `fs` module
+### 3. MongoDB 
+
+Goal: Using MongoDB to persist the application data instead of the in-memory repositories.
+
+Required Reading:
+
+ - [Introduction to Mongoose for MongoDB]https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/)
+
+Online Shop: 
+
+ > Replace the in-memory repository implementations with mongoose, thus storing the products and categories in Mongo DB.
+ >
+ > You can remove the old in-memory repositories.
+ 
+Further Resources:
+
+ - [MDN: Using a database](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose)
+ - [Mongoose Docs](https://mongoosejs.com/docs/)
+
+### 4. The `fs` module
 
 Goal: Know how to use the most common file system operations in Node.js.
 
 Required Reading:
 
- - [Node.js: File System APIs](https://nodejs.org/api/fs.html#fs_file_system
+ - [Node.js: File System APIs](https://nodejs.org/api/fs.html#fs_file_system)
 
 Online Shop: 
 
- > Create another set of repository implementations, storing the products and categories into a temporary folder on the file system. Each category should be a folder containing json files (one file for the category itself, and one file for each product).
+ > Use the file system to store and then serve images for the products. These images should be stored in a git-ignored `tmp` folder inside your project. Create dedicated APIs for:
+ > - Uploading a new image for a product (by id),
+ > - Remove the image of a product,
+ > - Retrieve the image of a product (by id) - here you should use Streams,
+ > - List all images.
  >
- > Add a mechanism to switch between the in-memory and file system repositories based on an environment variable value.
+ > Of course, when a product is deleted, it's corresponding image should also be deleted if it exists.
  
 Further Resources:
 
  - [Node.js file system intro](https://www.tutorialsteacher.com/nodejs/nodejs-file-system)
  - [Mastering the Node.js core modules](https://blog.risingstack.com/mastering-the-nodejs-core-modules-file-system-fs-module/)
-
