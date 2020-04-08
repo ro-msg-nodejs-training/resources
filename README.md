@@ -86,3 +86,53 @@ Further Resources:
 
  - [Asynchronous programming in Node.js](https://codeforgeek.com/asynchronous-programming-in-node-js/)
  - [Debugging in VSCode](https://code.visualstudio.com/docs/editor/debugging)
+ 
+### 2. Express
+ 
+Goal: Build RESTful APIs using the express framework.
+ 
+Required Reading:
+
+ - [Introduction to Express JS](https://medium.com/@jaeger.rob/introduction-to-nodes-express-js-db5617047150)
+ - [Express: Routing](https://expressjs.com/en/guide/routing.html)
+ - [REST API: Design Guidelines](https://medium.com/the-andela-way/rest-api-how-to-bce359ad7362)
+
+Online Shop: 
+
+ > Create new `routes` and `data/memory` subfolders. Use the `routes` folder for defining express routes and the `data` folder for defining data repositories (simple JavaScript objects that store / retrieve data). 
+>
+> The `memory` folder will contain in-memory repositories (which store the data in memory, in *static* variables).  In the next chapters we will replace them with other repository implementations. The data repositories should be async (i.e. they should return `Promises`). 
+ > 
+ > Create a simple API for exposing the products and product categories, supporting the following operations:
+ > - Reading all categories,
+ > - Reading all products in a given category (by id),
+ > - Reading a given product by id,
+ > - Creating a new product in a given category (by id),
+ > - Updating a product by id
+ > - Deleting a product by id
+ >
+ > These routes should use the in memory repositories for now.  
+ 
+Further Resources:
+
+ - [MDN: Node.js / Express Intro](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs)
+
+### 3. The `fs` module
+
+Goal: Know how to use the most common file system operations in Node.js.
+
+Required Reading:
+
+ - [Node.js: File System APIs](https://nodejs.org/api/fs.html#fs_file_system
+
+Online Shop: 
+
+ > Create another set of repository implementations, storing the products and categories into a temporary folder on the file system. Each category should be a folder containing json files (one file for the category itself, and one file for each product).
+ >
+ > Add a mechanism to switch between the in-memory and file system repositories based on an environment variable value.
+ 
+Further Resources:
+
+ - [Node.js file system intro](https://www.tutorialsteacher.com/nodejs/nodejs-file-system)
+ - [Mastering the Node.js core modules](https://blog.risingstack.com/mastering-the-nodejs-core-modules-file-system-fs-module/)
+
