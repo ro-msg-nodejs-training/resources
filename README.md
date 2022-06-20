@@ -6,10 +6,12 @@
  - [Online Shop](#online-shop)
  - [0. JavaScript, Git, NPM](#0-javascript-git-npm)
  - [1. Node.js](#1-nodejs)
- - [2. Express](#2-express)
- - [3. MongoDB](#3-mongodb)
- - [4. The `fs` module](#4-the-fs-module)
- - [5. Axios](#5-axios)
+ - [2. NestJS](#2-nestjs)
+ - [3. REST APIs](#3-rest-api)
+ - [4. TypeORM & MongoDB](#4-typeorm-and-mongodb)
+ - [5. Security](#5-security)
+ - [6. The `fs` module](#6-the-fs-module)
+ - [7. Axios](#7-axios)
 
 ## Working Mode
 
@@ -23,13 +25,13 @@ All the code written must be published on GitHub. Access the [this link](https:/
 
 You can work using your local environment. You need to install:
  - [NodeJS 12](https://nodejs.org/en/) 
- - [VSCode](https://code.visualstudio.com/download), with the [ESLint plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+ - [VSCode](https://code.visualstudio.com/download), with the [ESLint plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) or [Webstorm](https://www.jetbrains.com/webstorm/) (if you have the license) where you can download ESLint via plugins.
  - [Postman](https://www.postman.com/)
  - [MongoDB](https://www.mongodb.com/)
  
  For doing static code quality checks, two separate mechanisms will be used:
- - The plugin for ESlint code analysis must be used to fix code issues.
- - [Codacy](https://www.codacy.com/) will be enabled and developers should check the detected issues periodically.
+ - The plugin for ESlint code analysis must be used to identify code issues.
+ - [Prettier](https://prettier.io) will be enabled and developers should run it in order to make their code comply with basics of good format.
  
  ## Online Shop
 The application will deal with the management and daily functioning of a small online shop. Business processes:
@@ -43,7 +45,7 @@ Throughout the application, we assume that prices are always in EUR and weights 
 
 ### 0. JavaScript, Git, NPM
 
-Goal: Getting familiar with the ecosystem around NodeJS. You can skip this chapter if you have already worked with JavaScript, Git and npm before.
+Goal: Getting familiar with the ecosystem around NodeJS. You can skip this and the next chapter if you have already worked with JavaScript, Git and npm before.
 
 Required Reading:
 
@@ -55,15 +57,6 @@ Required Reading:
 Online Shop: 
 
  > Clone your repository. Initialize your node project using npm init.
- > 
- > Install the following packages using npm: 
- > - express
- > - mongoose
- > - lodash
- > - axios
- > - eslint (dev dependency)
- >
- > Configure ESLint to use the `eslint:recommended` configuration.
  >
  > Create a `index.js` file which prints a `hello world` message to the console. Mark this file as the main file in your `package.json` and create a `start` script which runs `node index.js`. Check that your message is printed by running `npm start` in the terminal.
  
@@ -96,23 +89,46 @@ Further Resources:
  - [Asynchronous programming in Node.js](https://codeforgeek.com/asynchronous-programming-in-node-js/)
  - [Debugging in VSCode](https://code.visualstudio.com/docs/editor/debugging)
  
-### 2. Express
  
-Goal: Build RESTful APIs using the express framework.
+### 2. NestJS
+
+Goal: Setting up your NestJS server.
+
+Required Reading:
+
+- [What is NestJS?](https://enlear.academy/why-you-should-use-nestjs-as-your-backend-framework-bd1ff1acce5d)
+- [NestJS first steps](https://docs.nestjs.com/first-steps)
+ 
+Online Shop:
+> Forget about the project you created before this. You will be now using a framework to help organize things.
+> Install nest CLI via 'npm i -g @nestjs/cli' then initiate your project with 'nest new project-name'.
+> Create a test endpoint within the app controller (for example GET - that returns 'Hello World').
+> Test your endpoint via Postman.
+> You may use this chapter to further familiarize yourself with concepts such as: Modules, Controllers, Providers, Pipes.
+
+Further Resources:
+
+- N/A.
+
+ 
+### 3. REST API
+ 
+Goal: Build RESTful APIs.
  
 Required Reading:
 
- - [Introduction to Express JS](https://medium.com/@jaeger.rob/introduction-to-nodes-express-js-db5617047150)
- - [Express: Routing](https://expressjs.com/en/guide/routing.html)
- - [REST API: Design Guidelines](https://medium.com/the-andela-way/rest-api-how-to-bce359ad7362)
+- [Getting started with NestJS](https://www.digitalocean.com/community/tutorials/getting-started-with-nestjs)
 
 Online Shop: 
 
- > Create new `routes` and `data/memory` subfolders. Use the `routes` folder for defining express routes and the `data` folder for defining data repositories (simple JavaScript objects that store / retrieve data). 
->
-> The `memory` folder will contain in-memory repositories (which store the data in memory, in *static* variables).  In the next chapters we will replace them with other repository implementations. The data repositories should be async (i.e. they should return `Promises`). 
- > 
- > Create a simple API for exposing the products and product categories, supporting the following operations:
+> Create a module for the entities you will use (categories and products). You will design them using the MVC pattern, thus each module will have:
+ > - models
+ > - DTOs
+ > - repository (for now store the data within an array of objects, later chapters will improve on this)
+ > - service
+ > - controller
+ 
+> Create a simple API for exposing the products and product categories, supporting the following operations:
  > - Reading all categories,
  > - Reading all products in a given category (by id),
  > - Reading a given product by id,
@@ -120,40 +136,60 @@ Online Shop:
  > - Updating a product by id
  > - Deleting a product by id
  >
- > These routes should use the in memory repositories for now. 
- >
  > Test these APIs using Postman.
  
 Further Resources:
 
- - [MDN: Node.js / Express Intro](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs)
+- N/A.
 
-### 3. MongoDB 
+### 4. TypeORM and MongoDB 
 
-Goal: Using MongoDB to persist the application data instead of the in-memory repositories.
+Goal: Using TypeORM & MongoDB to persist the application data instead of the in-memory repositories.
 
 Required Reading:
 
- - [Introduction to Mongoose for MongoDB](https://www.freecodecamp.org/news/introduction-to-mongoose-for-mongodb-d2a7aa593c57/)
+ - [TypeORM Documentation](https://typeorm.io)
+ - [Integrating TypeORM with NestJS](https://docs.nestjs.com/techniques/database)
+ - [Using TypeORM with NestJS](https://orkhan.gitbook.io/typeorm/docs/mongodb)
+
 
 Online Shop: 
 
- > Replace the in-memory repository implementations with mongoose, thus storing the products and categories in Mongo DB.
- >
- > You can remove the old in-memory repositories.
+ > Integrate TypeORM with MongoDB, in your NestJS application. You will essentially now be store your data within MongoDB.
+ > 
+ > You can remove the old in-memory repository implementations.
  
 Further Resources:
 
  - [MDN: Using a database](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose)
- - [Mongoose Docs](https://mongoosejs.com/docs/)
 
-### 4. The `fs` module
+### 5. Security
+
+Goal: Add user authentication and authorization to your backend.
+
+Required Reading:
+- [Security](https://docs.nestjs.com/openapi/security)
+- [Authentication](https://docs.nestjs.com/security/authentication)
+
+Online Shop:
+
+> Add authentication based on JWT tokens, accessible only for registered users. You will create an admin role and a customer role, which will determine their permissions within the api.
+> 
+> Secure all your routes in such way that only admins can create, update and delete products, and only admin and customers can access the rest of the endpoints.
+
+Further Resources:
+- [Helmet](https://docs.nestjs.com/security/helmet)
+- [Developing a Secure API with NestJS: Getting Started](https://auth0.com/blog/developing-a-secure-api-with-nestjs-getting-started/)
+
+### 6. The `fs` module
 
 Goal: Know how to use the most common file system operations in Node.js.
 
 Required Reading:
 
  - [Node.js: File System APIs](https://nodejs.org/api/fs.html#fs_file_system)
+ - [File Uploading](https://docs.nestjs.com/techniques/file-upload)
+ - [File Streaming](https://docs.nestjs.com/techniques/streaming-files)
 
 Online Shop: 
 
@@ -170,13 +206,14 @@ Further Resources:
  - [Node.js file system intro](https://www.tutorialsteacher.com/nodejs/nodejs-file-system)
  - [Mastering the Node.js core modules](https://blog.risingstack.com/mastering-the-nodejs-core-modules-file-system-fs-module/)
  
- ### 5. Axios
+ ### 7. Axios
  
  Goal: Integrate a third party API using axios.
  
  Required Reading:
  
   - [Axios Tutorial](https://medium.com/@amchris98/axios-tutorial-7e1fe28b8b05)
+  - [HTTP Module in NestJS](https://docs.nestjs.com/techniques/http-module)
   
 Online Shop: 
 
