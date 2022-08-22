@@ -8,7 +8,7 @@
  - [1. Node.js](#1-nodejs)
  - [2. NestJS](#2-nestjs)
  - [3. REST APIs](#3-rest-api)
- - [4. TypeORM & MongoDB](#4-typeorm-and-mongodb)
+ - [4. Database](#4-database)
  - [5. Security](#5-security)
  - [6. The `fs` module](#6-the-fs-module)
  - [7. Axios](#7-axios)
@@ -27,7 +27,7 @@ You can work using your local environment. You need to install:
  - [NodeJS 12](https://nodejs.org/en/) 
  - [VSCode](https://code.visualstudio.com/download), with the [ESLint plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) or [Webstorm](https://www.jetbrains.com/webstorm/) (if you have the license) where you can download ESLint via plugins.
  - [Postman](https://www.postman.com/)
- - [MongoDB](https://www.mongodb.com/)
+ - [PostgreSQL](https://www.postgresql.org/download/)
  
  For doing static code quality checks, two separate mechanisms will be used:
  - The plugin for ESlint code analysis must be used to identify code issues.
@@ -106,10 +106,6 @@ Online Shop:
 > Test your endpoint via Postman.
 > You may use this chapter to further familiarize yourself with concepts such as: Modules, Controllers, Providers, Pipes.
 
-Further Resources:
-
-- N/A.
-
  
 ### 3. REST API
  
@@ -138,30 +134,24 @@ Online Shop:
  >
  > Test these APIs using Postman.
  
-Further Resources:
 
-- N/A.
+### 4. Database 
 
-### 4. TypeORM and MongoDB 
-
-Goal: Using TypeORM & MongoDB to persist the application data instead of the in-memory repositories.
+Goal: Using TypeORM & PostgreSQL to persist the application data instead of the in-memory repositories.
 
 Required Reading:
 
  - [TypeORM Documentation](https://typeorm.io)
  - [Integrating TypeORM with NestJS](https://docs.nestjs.com/techniques/database)
- - [Using TypeORM with NestJS](https://orkhan.gitbook.io/typeorm/docs/mongodb)
+ - [Using PG with TypeORM](https://www.thisdot.co/blog/connecting-to-postgresql-using-typeorm)
 
 
 Online Shop: 
 
- > Integrate TypeORM with MongoDB, in your NestJS application. You will essentially now be store your data within MongoDB.
+ > Integrate TypeORM with PostgreSQL, in your NestJS application. You will essentially now be store your data within the database.
  > 
  > You can remove the old in-memory repository implementations.
  
-Further Resources:
-
- - [MDN: Using a database](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose)
 
 ### 5. Security
 
