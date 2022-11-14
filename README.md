@@ -12,7 +12,16 @@
  - [5. Security](#5-security)
  - [6. The `fs` module](#6-the-fs-module)
  - [7. Axios](#7-axios)
-
+ - [OPT-1. Task Scheduler](#opt-1-task-scheduler)
+ - [OPT-2. MongoDB](#opt-2-mongodb)
+ - [OPT-3. OAuth](#opt-3-oauth)
+ - [OPT-4. RabbitMQ](#opt-4-rabbitmq)
+ - [OPT-5. Mailing](#opt-5-mailing)
+ - [OPT-6. Websockets](#opt-6-websockets)
+ - [OPT-7. OpenAPI](#opt-7-openapi)
+ - [OPT-8. GraphQL](#opt-8-graphql)
+ - [OPT-9. Microservices](#opt-9-microservices)
+ 
 ## Working Mode
 
 The road-map consists of several steps. In each step, a set of theoretical concepts are explored, supported by reference documentation, book chapters, tutorials and videos. In parallel, a simple application will be built with the learned concepts: the *Online Shop* application.
@@ -225,3 +234,94 @@ Online Shop:
  Further Resources:
  
   - [Axios documentation](https://github.com/axios/axios)
+  
+  ### OPT-1. Task Scheduler
+  
+Goal: Schedule a simple task to run periodically.
+
+Required Reading:
+- [Task Scheduling](https://docs.nestjs.com/techniques/task-scheduling)
+
+Online Shop:
+> The owner of the Online Shop wants to see a sales report every morning for the day before. 
+> To cater for this requirement, create a periodical job that runs at the end of each day. 
+> It should aggregate all the sales revenues for each location for that day and store the result into the Revenue database table.
+
+  ### OPT-2. MongoDB
+  
+Goal: Store unstructured data in a NoSQL database.
+
+Required Reading:
+- [NoSQL Databases](https://searchdatamanagement.techtarget.com/definition/NoSQL-Not-Only-SQL)
+- [What is MongoDB?](https://www.mongodb.com/what-is-mongodb)
+- [Mongo in NestJS](https://docs.nestjs.com/techniques/mongodb)
+
+Hint: You can still use TypeORM to interact with the Mongo DB.
+
+  ### OPT-3. OAuth
+  
+Goal: Secure the online shop with OAuth 2.0.
+
+Required Reading:
+- [The Simplest Guide to OAuth 2.0](https://medium.com/@darutk/the-simplest-guide-to-oauth-2-0-8c71bd9a15bb)
+- [Spotify OAuth2 Authentication in a NestJS Application](https://betterprogramming.pub/spotify-oauth2-authentication-in-a-nestjs-application-307b25b2e49e)
+  
+Online Shop:
+> Configure your application as an Authorization Server with an in-memory store of clients. Use Postman to test that you are able to issue a token using the password grant.
+
+> Now also configure your application as a Resource Server and secure your REST APIs using OAuth.
+
+> Lastly, enable your application to additionally use the [GitHub Authorization Server](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/). To do this, you will first need to register a new OAuth app on GitHub or contact the trainers for obtaining the credentials of an existing client.
+
+  ### OPT-4. RabbitMQ
+  
+Goal: Asynchronously communicate with a background worker application.
+
+Required Reading:
+- [Understanding Message Brokers](https://medium.com/@ekanshbansal/understanding-message-brokers-using-rabbitmq-5c8b41ecf0f2)
+- [RabbitMQ](https://docs.nestjs.com/microservices/rabbitmq)
+
+  ### OPT-5. Mailing
+  
+Goal: Send confirmation emails to customers when orders are created.
+
+Required Reading:
+- [Part 1 - sending emails in nestjs](https://www.learmoreseekmore.com/2022/05/part-1-email-sending-in-nestjs-app.html)
+- [Part 2 - generate dynamic email template](https://www.learmoreseekmore.com/2022/05/part2-generate-dynamic-email-template-and-send-email-in-the-nestjs-application.html)
+
+Online Shop:
+> Send a confirmation email to customers once an order has been successfully created.
+
+
+  ### OPT-6. WebSockets
+  
+Goal: Publish events though WebSocket to allow potential user interfaces to automatically update their displayed data.
+
+Required Reading:
+- [What are WebSockets](https://pusher.com/websockets)
+- [An Introduction to WebSockets](https://blog.teamtreehouse.com/an-introduction-to-websockets)
+- [Gateways](https://docs.nestjs.com/websockets/gateways)
+
+
+  ### OPT-7. OpenAPI
+  
+Goal: Describe the API with an OpenAPI specification. 
+
+Required Reading:
+- [Introduction to OpenAPI](https://docs.nestjs.com/openapi/introduction)
+
+  ### OPT-8. GraphQL
+  
+Goal: Create an additional GraphQL API in paralel to the REST API.
+
+Required Reading:
+- [Introduction to GraphQL](https://graphql.org/learn/)
+- [NestJS GraphQL Quick Start](https://docs.nestjs.com/graphql/quick-start)
+
+  ### OPT-9. Microservices
+  
+Goal: Split the application in microservices, each of them containing a part of the business logic (e.g., one for orders, one for products, etc.).
+
+Required Reading:
+- [Splitting a Monolith into Microservices](https://dzimchuk.net/splitting-a-monolith-into-microservices/)
+- [Basics of Microservices in NestJS](https://docs.nestjs.com/microservices/basics)
